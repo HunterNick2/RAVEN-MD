@@ -10,7 +10,7 @@
   <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=d1fa02&center=true&vCenter=true&multiline=false&lines=RAVEN+WHATSAPP+BOT" alt="">
 </p>
 <p align="center">
-<a href="#"><img title="Creator" src="https://img.shields.io/badge/Creator-NICK.svg?style=for-the-badge&logo=github"></a>
+<a href="#"><img title="Creator" src="https://img.shields.io/badge/Creator-𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫-blue.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 <a href="'https://wa.me/254114660061ʜᴇʟʟᴏ+𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏 +uko+na+update+yoyote+ya+CROWN+Bot+Mkuu+🥲'"><img title="Whatsapp" src="'https://wa.me/254114660061ʜᴇʟʟᴏ+𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏 +uko+na+update+ya+Raven+Bot+Mkuu+🥲'?color=green&style=flat-square"></a>
@@ -44,7 +44,7 @@ Linking/Pairing:
 </a>
 </h2>
 
-Alternatively, pair locally using the repo [Here](https://github.com/Fortunatusmokaya/DREADED-PAIRING)
+Alternatively, pair locally using the repo [Here](https://zenon-ai-pairing.onrender.com/pair)
 
     
 <h2 align="center">   
