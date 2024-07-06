@@ -78,7 +78,7 @@ Modifying the bot structure is at your own risk. We won't offer technical suppor
 
 ## License
 
-[MIT License](https://https://github.com/kimsirm/CROWN-MD/blob/main/LICENSE)
+[MIT License](https://https://github.com/HunterNick2/RAVEN-MD/blob/main/LICENSE)
 
-Copyright (c) 2023 CROWN-MD
+Copyright (c) 2024 RAVEN-MD
 
