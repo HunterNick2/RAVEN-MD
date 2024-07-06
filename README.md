@@ -40,7 +40,7 @@ Linking/Pairing:
 
 
 ## ` Pair On onrender`
-<h2 align="left">  <a href="https://zenon-ai-pairing.onrender.com/pair"><img src="" />
+<h2 align="left">  <a href="https://zenon-ai-pairing.onrender.com/pair"><img src="https://zenon-ai-pairing.onrender.com/pair" />
 </a>
 </h2>
 
