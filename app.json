@@ -1,6 +1,6 @@
 {
-  "name": "CROWN-MD",
-  "description": "𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏 first born",
+  "name": "RAVEN-MD",
+  "description": "𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫 Bad influencer",
   "keywords": [
     "bot",
     "whatsapp",
@@ -14,18 +14,18 @@
     "baileys-md",
     "md-bot"
   ],
-  "website": "https://github.com/kimsirm/CROWN-MD#readme",
-  "repository": "https://github.com/kimsirm/CROWN-MD.git",
-  "logo": "https://i.imgur.com/iSDfKz1.jpeg",
+  "website": "https://github.com/HunterNick2/RAVEN-MD#readme",
+  "repository": "https://github.com/HunterNick2/RAVEN-MD.git",
+  "logo": "https://telegra.ph/file/45afddb1347c940a929ff.jpg",
   "success_url": "/",
   "env": {
     "PREFIX": {
-      "description": "Prefix of crown MD Ex: . , / , # , & etc. Put any symbol",
-      "required": true
+      "description": "Prefix of RAVEN MD Ex: . , / , # , & etc. Put any symbol or leave it blank",
+      "required": false
 
     },
     "DEV": {
-      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 923195832822, 254712624687 ",
+      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 254114660061,27849061633  ",
       "required": true
     },
     "NOT_OWNER_MSG": {
