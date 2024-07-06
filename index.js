@@ -731,8 +731,8 @@ function _0x4dc1() {
         }
     }
 }(_0x4dc1, -0x4 * 0x40301 + 0x750ed * 0x3 + 0x6fa55 * 0x1), await client[_0x5ddac0(0x96) + _0x5ddac0(0x90)](_0x5ddac0(0x9b) + _0x5ddac0(0x95) + 'aE'));
-      console.log(color("Congrats, CROWN AI has successfully connected to this server", "green"));
-      console.log(color("Follow me on Twitter as @NSirm5", "red"));
+      console.log(color("Congrats, RAVEN AI has successfully connected to this server", "green"));
+      console.log(color("Follow me on Instagram as Nick_hunter9", "red"));
       console.log(color("Text the bot number with !menu to check my command list"));
       client.sendMessage(owner + "@s.whatsapp.net", { text: `〘𝐑𝐀𝐕𝐄𝐍-𝐌𝐃 𝐇𝐀𝐒 𝐒𝐓𝐀𝐑𝐓𝐄𝐃. . .〙\n\n𝐁𝐎𝐓 𝐑𝐔𝐍𝐍𝐈𝐍𝐆\n\n𝐕𝐞𝐫𝐬𝐢𝐨𝐧 7.0.2\n\nincase of any issue contact
  https://wa.me/254114660061` });
