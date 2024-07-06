@@ -10,13 +10,13 @@
   <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=d1fa02&center=true&vCenter=true&multiline=false&lines=RAVEN+WHATSAPP+BOT" alt="">
 </p>
 <p align="center">
-<a href="#"><img title="Creator" src="https://img.shields.io/badge/Creator-𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏-blue.svg?style=for-the-badge&logo=github"></a>
+<a href="#"><img title="Creator" src="https://img.shields.io/badge/Creator-𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 <a href="'https://wa.me/254114660061ʜᴇʟʟᴏ+𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏 +uko+na+update+yoyote+ya+CROWN+Bot+Mkuu+🥲'"><img title="Whatsapp" src="'https://wa.me/254114660061ʜᴇʟʟᴏ+𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏 +uko+na+update+ya+Raven+Bot+Mkuu+🥲'?color=green&style=flat-square"></a>
   
 <a href="https://wa.me/254114660061ʜᴇʟʟᴏ+𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏"><img title="Instagram" src="https://www.instagram.com/nick_hunter9?igsh=MXB5Nmowc2hycnIxcA=="></a>
-<a href="https://github.com/kimsirm/CROWN-MD/network/members"><img title="Forks" src="https://img.shields.io/github/fork/kimsirm/COWN-MD?color=yellow&style=flat-square"></a>
+<a href="https://github.com/HunterNick2/RAVEN-MD/network/members"><img title="Forks" src="https://img.shields.io/github/fork/HunterNick2/RAVEN-MD?color=yellow&style=flat-square"></a>
 <a href="https://github.com/owlai01/CROWN-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/kimsirm/CROWN-MD?label=Watchers&color=red&style=flat-square"></a>
 <a href="https://github.com/HunterNick2/RAVEN-MD/"><img title="Size" src="https://img.shields.io/github/repo-size/AlipBot/Api-Alpis?style=flat-square&color=darkred"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/owlai01/Owl-Ai/%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2304FF00&title=hits&edge_flat=false"/></a>
