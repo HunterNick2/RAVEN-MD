@@ -387,7 +387,7 @@ let cap = `╭════〘 *_𝐑𝐀𝐕𝐄𝐍 𝐀𝐈_* 〙═⊷❍
 ┃✯°│ *_𝐀𝐢-𝐢𝐦𝐠_*
 ┃✯°│ *_𝐑𝐚𝐯𝐞𝐧_*
 ┃✯°│ *_𝐆_*
-┃✯°│ *_𝐆𝐩𝐭_*                                                                                                                                                                                                                                                         
+┃✯°│ *_𝐆𝐩𝐭_*                                                                                                                                                                                                                                                        
 ┬✯°│
 │╰────────────────❍
 ╭════〘 *_𝐆𝐑𝐎𝐔𝐏_* 〙═══⊷❍
@@ -1160,7 +1160,7 @@ await m.reply('Successfully removed!');
                  let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net']; 
   
                  await client.groupParticipantsUpdate(m.chat, users, 'demote'); 
- m.reply('Successfully demoted! 😲); 
+ m.reply('Successfully demoted! 😲'); 
          } 
  break;
  case "disp7": { 
