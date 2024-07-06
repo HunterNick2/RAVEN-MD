@@ -40,11 +40,8 @@ Linking/Pairing:
 
 
 ## ` Pair On onrender`
-<h2 align="left">  <a href="https://zenon-ai-pairing.onrender.com/pair"><img src="https://zenon-ai-pairing.onrender.com/pair" />
-</a>
-</h2>
 
-Alternatively, pair locally using the repo [Here](https://zenon-ai-pairing.onrender.com/pair)
+Alternatively, pair locally using the link [Here](https://zenon-ai-pairing.onrender.com/pair)
 
     
 <h2 align="center">   
