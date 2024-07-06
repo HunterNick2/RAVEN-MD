@@ -345,7 +345,7 @@ let cap = `╭════〘 *_𝐑𝐀𝐕𝐄𝐍 𝐀𝐈_* 〙═⊷❍
 ┃✯│ *_𝐔𝐬𝐞𝐫 : ${m.pushName}_*
 ┃✯│ *_𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦 : 𝐇𝐞𝐫𝐨𝐤𝐮_*
 ┃✯│ *_𝐒𝐩𝐞𝐞𝐝 : ${dreadedspeed.toFixed(4)} 𝐦𝐬_*
-┃✯│ *_𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐑𝐀𝐌 : 96𝐆𝐁 𝐨𝐟 512𝐆𝐁_*
+┃✯│ *_𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐑𝐀𝐌 : 96𝐆𝐁 𝐨𝐟  512𝐆𝐁_*
 ┃✯│ *_𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}_*
 ┃✯│ *_𝐕𝐞𝐫𝐬𝐢𝐨𝐧: 𝐯7.𝟎.2_*
 ┃✯│
@@ -452,8 +452,10 @@ let cap = `╭════〘 *_𝐑𝐀𝐕𝐄𝐍 𝐀𝐈_* 〙═⊷❍
 ▯✦╭─────────────···▸
 ┴✯°│
 ┃✯°│ *_𝐆𝐩𝐭 𝐢𝐧𝐛𝐨𝐱_*
-|☆°| *_𝐄𝐯𝐚𝐥_*
-|☆°| *_𝐔𝐩𝐥𝐨𝐚𝐝_*
+ |☆°||   *_𝐄𝐯𝐚𝐥_*
+ |☆°||   *_𝐔𝐩𝐥𝐨𝐚𝐝_*
+ |☆°||   *_𝐀𝐭𝐭𝐩_*
+ |☆°||   *_𝐔𝐫𝐥_*
 ✦°°╰───────────────❍
 ╰═══════════════⊷❍`;
 
@@ -480,7 +482,7 @@ client.sendMessage(m.chat, {
                                 title: `𝐑𝐀𝐕𝐄𝐍-𝐀𝐈`,
                                 body: `${runtime(process.uptime())}`,
                                 thumbnail: fs.readFileSync('./Raven.jpg'),
-                                sourceUrl: 'https://wa.me/254114660061?text=ʜᴇʟʟᴏ+𝐈𝐭𝐬_𝐒𝐢𝐫𝐦™𝕏+Nihostie+Bot+Mkuu+🥲',
+                                sourceUrl: 'https://wa.me/254114660061?text=Hello👋+Nick+Nihostie+Bot+Mkuu+😔',
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                             }
@@ -589,13 +591,13 @@ function _0x2de4() {
         '64311OINjak',
         'catch',
         'e\x20text.\x20Th',
-        '\x20of\x20its developer 𝐒𝐢𝐫𝐦',
+        '\x20of\x20its developer 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫',
         'is\x20AI\x20work',
         '1832596QZCVhJ',
         '\x20and\x20Googl',
         'AgaVJ',
         '6jOniet',
-        '𝐂𝐑𝐎𝐖𝐍-𝐀𝐈',
+        '𝐑𝐀𝐕𝐄𝐍-𝐀𝐈',
         '20KZWKYf',
         '\x20needs\x20som',
         'gPDEf',
@@ -653,7 +655,7 @@ const rel = await quote(xf, pushname, pppuser)
             }
 
 break;
-            case 'upload': {
+            case 'upload': case 'url': {
                 
                 let fta2 = await client.downloadAndSaveMediaMessage(qmsg)
                 if (/image/.test(mime)) {
