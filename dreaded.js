@@ -1094,7 +1094,7 @@ try {
                  await client.groupParticipantsUpdate(m.chat, users, 'remove'); 
 await m.reply('Successfully removed!'); 
 } catch (errr) { 
- await reply("Something is wrong! Did you give me a user to remove?")}
+ await reply("I don't have power to remove😩 Make me an admin to proceed!")}
 
      
          } 
@@ -1231,7 +1231,7 @@ await m.reply('Successfully removed!');
  break;
           case "leave": { 
                  if (!isAdmin) throw admin; 
- await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again😔); 
+ await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again..😔'); 
                  await client.groupLeave(m.chat); 
   
              } 
@@ -1245,7 +1245,7 @@ await m.reply('Successfully removed!');
                  if (!isAdmin) throw admin; 
                  if (!text) throw 'Provide the text for the group subject.'; 
                  await client.groupUpdateSubject(m.chat, text); 
- m.reply('Group name successfully updated! 💀); 
+ m.reply('Group name successfully updated! 💀'); 
              } 
              break; 
            case "desc": case "setdesc": { 
@@ -1254,7 +1254,7 @@ await m.reply('Successfully removed!');
                  if (!isAdmin) throw admin; 
                  if (!text) throw 'Provide the text for the group description' 
                  await client.groupUpdateDescription(m.chat, text); 
- m.reply('Group description successfully updated! 🥶); 
+ m.reply('Group description successfully updated! 🥶'); 
              } 
  break; 
  case "hidetag": case "tag": { 
