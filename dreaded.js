@@ -1711,7 +1711,7 @@ break;
                 client.sendMessage(
                     from, {
                         video: fs.readFileSync(`./${randomName}`),
-                        caption: `𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐛𝐲 𝐂𝐫𝐨𝐰𝐧-𝐀𝐈`,
+                        caption: `𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐛𝐲 𝐑𝐀𝐕𝐄𝐍-𝐀𝐈`,
                     }, {
                         quoted: m
                     }
@@ -1731,17 +1731,17 @@ case "ping": case "speed": {
          } 
  break; 
   
- case "runtime": { 
-                 m.reply (`Raven is active for ${runtime(process._uptime())}`) 
+ case "runtime": case "uptime": { 
+                 m.reply (`Raven is active for ${runtime(process.uptime())}`) 
  } 
  break;
 
 case "alive": { 
   
- client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/0b64b4a37ebe0cb19c458.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been running since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
+ client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/0b64b4a37ebe0cb19c458.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
-case 'apk': {
+case 'apk': case "app": {
 if (!text) throw `I need an apk name for download`;
 const getRandomm = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; }; 
          let randomName = getRandomm(".apk"); 
