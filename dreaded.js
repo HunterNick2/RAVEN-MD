@@ -92,20 +92,21 @@ const menu = process.env.MENU_TYPE || 'VIDEO';
     const badword = bad.split(",");
     const Owner = DevDreaded.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(m.sender)
     // Group
-    const groupMetadata = m.isGroup ? await client.groupMetadata(m.chat).catch((e) => {}) : "";
-    const groupName = m.isGroup ? groupMetadata.subject : "";
-    const participants = m.isGroup ? await groupMetadata.participants : ""; 
+   
+   const groupMetadata = m.isGroup ? await client.groupMetadata(m.chat).catch((e) => {}) : "";
+const groupName = m.isGroup && groupMetadata ? await groupMetadata.subject : "";
+    const participants = m.isGroup && groupMetadata ? await groupMetadata.participants : ""; 
      const groupAdmin = m.isGroup ? await getGroupAdmins(participants) : ""; 
      const isBotAdmin = m.isGroup ? groupAdmin.includes(botNumber) : false; 
      const isAdmin = m.isGroup ? groupAdmin.includes(m.sender) : false;
-const admin = process.env.ADMIN_MSG || '𝐅𝐚𝐢𝐥𝐮𝐫𝐞!, 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐭𝐨𝐨 𝐲𝐨𝐮𝐧𝐠 𝐭𝐨 𝐝𝐨 𝐭𝐡𝐚𝐭🦄';
+const admin = process.env.ADMIN_MSG || 'Are you an admin?';
     const group = process.env.GROUP_ONLY_MSG || 'Is this a group chat?';
-    const botAdmin = process.env.BOT_ADMIN_MSG || '𝐅**𝐤 𝐲𝐨𝐮 🦄𝐚𝐦 𝐚𝐧 𝐧𝐨𝐭 𝐚𝐧 𝐚𝐝𝐦𝐢𝐧'
-    const NotOwner = process.env.NOT_OWNER_MSG || 'Lol you are not 𝐍𝐢𝐜𝐤';
+    const botAdmin = process.env.BOT_ADMIN_MSG || 'Am I an admin?'
+    const NotOwner = process.env.NOT_OWNER_MSG || 'Are you the owner?';
 const wapresence = process.env.WA_PRESENCE || 'recording';
 const antilink = process.env.ANTILINK || 'TRUE';
-const antilinkall = process.env.ANTILINK_ALL || 'FALSE';
-
+const antilinkall = process.env.ANTILINK_ALL || 'TRUE';
+ 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 
  var d = Math.floor(seconds / (3600 * 24)); 
@@ -1300,7 +1301,7 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
                  } 
           }
           break;
-          case "dp": case "profile": { 
+          case "dp": { 
  try { 
  ha = m.quoted.sender; 
  qd = await client.getName(ha); 
@@ -1321,7 +1322,7 @@ break;
 
   case "system": 
   
-              client.sendMessage(m.chat, { image: { url: 'https://telegraph.ph/file/d680a29b1d9b10cef6dfb.jpg' }, caption:`*𝐁𝐎𝐓 𝐍𝐀𝐌𝐄: RAVE𝐍-𝐀𝐈_*\n\n*𝐒𝐏𝐄𝐄𝐃: Raven speed: ${dreadedspeed.toFixed(4)} 𝐦𝐬*\n\n*𝐑𝐔𝐍𝐓𝐈𝐌𝐄: ${runtime(process.uptime())}*\n\n*𝐏𝐋𝐀𝐓𝐅𝐎𝐑𝐌: Linux*\n\n*𝐇𝐎𝐒𝐓𝐍𝐀𝐌𝐄: NICK*\n\n*𝐋𝐈𝐁𝐑𝐀𝐑𝐘: Baileys*\n\n\DEVELOPER: Nick_Hunter`}); 
+              client.sendMessage(m.chat, { image: { url: 'https://telegraph.ph/file/d680a29b1d9b10cef6dfb.jpg' }, caption:`*𝐁𝐎𝐓 𝐍𝐀𝐌𝐄: RAVE𝐍-𝐀𝐈*\n\n*𝐒𝐏𝐄𝐄𝐃: Raven speed: ${dreadedspeed.toFixed(4)} 𝐦𝐬*\n\n*𝐑𝐔𝐍𝐓𝐈𝐌𝐄: ${runtime(process.uptime())}*\n\n*𝐏𝐋𝐀𝐓𝐅𝐎𝐑𝐌: Linux*\n\n*𝐇𝐎𝐒𝐓𝐍𝐀𝐌𝐄: NICK*\n\n*𝐋𝐈𝐁𝐑𝐀𝐑𝐘: Baileys*\n\n\*DEVELOPER: Nick_Hunter`}); 
  break; 
 
 case "take": {
