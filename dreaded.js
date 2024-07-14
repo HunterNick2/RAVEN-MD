@@ -351,7 +351,7 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═𒋨࿌
 ┃༆│ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: 𝗩7.𝟎.2
 ┃༆│●───●───●───●─●╮
 ┃༆│༄༄༄༄༄༄༄༄༄༄❚
-┃༆│ ▋▋𝐑𝐀𝐕𝐄𝐍 𝐁𝐎𝐓▋▋
+┃༆│  ▋▋𝐑𝐀𝐕𝐄𝐍 𝐁𝐎𝐓▋▋
 ┃༆│༄༄༄༄༄༄༄༄༄༄❚
 ┃༆│●───●───●───●─●╯
 ┃╰࿐࿐࿐࿐࿐࿐࿐𖤓╮
@@ -423,7 +423,7 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═𒋨࿌
 ┃༆│ *_𝐂𝐨𝐦𝐩𝐢𝐥𝐞-𝐣𝐬_*
 ┃༆│ *_𝐌𝐚𝐢𝐥_*
 ┃༆│ *_𝐈𝐧𝐛𝐨𝐱_*
-╰═༄༄༄༄༄༄༄༄༄༄༄༄༄༄࿌╯
+╰═༄༄༄༄༄༄༄༄༄༄༄༄༄࿌╯
 ╭═══〘 𝗢𝗪𝗡𝗘𝗥  〙༆࿐༄᯽︎
 ▯༆╭࿐࿐࿐࿐࿐࿐࿐𖤓╮
 ┃༆│ *_𝐑𝐞𝐬𝐭𝐚𝐫𝐭_*
@@ -436,7 +436,7 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═𒋨࿌
 ┃༆│ *_>_*
 ┃༆│ *_𝐊𝐢𝐥𝐥_*
 ┃༆│ *_𝐔𝐧𝐛𝐥𝐨𝐜𝐤_*
-╰══࿌༄༄༄༄༄༄༄༄༄༄༄༄࿌╯
+╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
 ╭═══〘 𝗢𝗧𝗛𝗘𝗥𝗦  〙═࿐༄᯽︎
 ▯༆╭࿐࿐࿐࿐࿐࿐࿐𖤓╮
 ┃༆│ *_𝐆𝐩𝐭 𝐢𝐧𝐛𝐨𝐱_*
@@ -447,7 +447,7 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═𒋨࿌
 ┃༆│ *_𝐀𝐝𝐯𝐢𝐜𝐞_*
 ┃༆│ *_𝐒𝐲𝐬𝐭𝐞𝐦_*
 ┃᯽︎╰࿐࿐࿐࿐࿐࿐࿐࿐࿌╮
-┃☬☬𝗠𝗔𝗗𝗘 𝗢𝗡 𝗘𝗔𝗥𝗧𝗛 𝗕𝗬 𝗛𝗨𝗠𝗔𝗡𝗦!
+┃☬𝗠𝗔𝗗𝗘 𝗢𝗡 𝗘𝗔𝗥𝗧𝗛 𝗕𝗬 𝗛𝗨𝗠𝗔𝗡𝗦!
 ╰═༄༄༄༄༄༄༄༄༄༄༄༄༄༄࿌╯`;
 
 if (menu === 'VIDEO') {
@@ -1099,7 +1099,7 @@ await m.reply('Successfully removed!');
  case 'sc': case 'script': case 'repo':
 
  client.sendMessage(m.chat, { image: { url: `https://telegra.ph/file/416c3ae0cfe59be8db011.jpg` }, caption: 
-`👋🏻 Hello *${pushname}*,You can deploy RAVEN-BOT using the GitHub link below🦄\n\nFork and give us a star✨.\n\n https://github.com/HunterNick2/RAVEN-MD\n\nLink with your whatsapp using pairing link below\nhttps://replit.com/@dicksonnicky50/Pairing-Raven\n\nAfter uploading the document connect your repo with this link and deploy\nhttps://dashboard.heroku.com/new-app?template=\nEnjoy and have fun with RAVEN AI 🦄!\n\nMade on Earth by 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫°!!` });
+`👋🏻 Hello *${pushname}*,You can deploy 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧 using the GitHub link below🦄\n\nFork and give us a star✨.\n\n https://github.com/HunterNick2/RAVEN-MD\n\nLink with your whatsapp using pairing link below\nhttps://replit.com/@dicksonnicky50/Pairing-Raven\n\nAfter uploading the document connect your repo with this link and deploy\nhttps://dashboard.heroku.com/new-app?template=\n\nEnjoy and have fun with 𝗥𝗔𝗩𝗘𝗡 𝗕𝗢𝗧 🦄!\n\n𝗠𝗮𝗱𝗲 𝗼𝗻 𝗲𝗮𝗿𝘁𝗵 𝗯𝘆 𝗛𝘂𝗺𝗮𝗻𝘀!` });
 
    break;
                                                   
