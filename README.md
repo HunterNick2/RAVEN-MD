@@ -42,7 +42,6 @@ Linking/Pairing:
 <h2 align="left">  <a href="https://replit.com/@dicksonnicky50/Pairing-Raven"><img src="https://repl.it/badge/github/quiec/whatsasena" />
 </a>
 </h2>
-Alternatively, pair locally using the link [Here](https://github.com/HunterNick2/HUNTER-PAIRING)
 
     
 <h2 align="center">   
