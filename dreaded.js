@@ -1453,8 +1453,8 @@ break;
 break
   case 'play':
     case 'stream': {
-        if (!text) {
-            reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝐩𝐥𝐚𝐲 𝐳𝐨𝐨𝐦 𝐜𝐡𝐞𝐪𝐮𝐞')
+     if (!text) {
+            m.reply('What song do you want to download?')
             return;
         }
         try {
@@ -1467,11 +1467,8 @@ break
             }
             let urlYt = videos[0].url
             let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`Too big!\I'm Unable to download big files. 🥲`);
-                return;
-            }
+
+
             const getRandonm = (ext) => {
                 return `${Math.floor(Math.random() * 10000)}${ext}`;
             };
@@ -1487,16 +1484,16 @@ break
                 stream.on("error", reject);
                 stream.on("finish", resolve);
             });
-            
+
             let stats = fs.statSync(`./${randomName}`);
             let fileSizeInBytes = stats.size;
             // Convert the file size to megabytes (optional)
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
             console.log("Audio downloaded ! \n Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 40) {
-                //sendFile(from, fs.readFileSync(`./${randomName}`), msg, { audio: true, jpegThumbnail: (await getBuffer(dl.meta.image)).buffer, unlink: true })
+
+
                 await client.sendMessage(
-                    from, {
+                    m.chat, {
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: "audio/mpeg",
                         fileName: titleYt + ".mp3",
@@ -1504,12 +1501,10 @@ break
                         quoted: m
                     }
                 );
-            } else {
-                reply(`File size bigger.`);
-            }
+
             fs.unlinkSync(`./${randomName}`);
         } catch (e) {
-            reply(e.toString())
+            m.reply(e.toString())
         }
     }
 break;
