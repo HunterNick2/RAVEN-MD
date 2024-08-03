@@ -55,13 +55,13 @@
      "performance-now": "^2.1.0", 
      "openai": "^4.0.0", 
    "acrcloud": "^1.4.0",
-     "ytdl-secktor": "^4.11.7", 
+     "ytdl-secktor": "^0.0.1-development", 
  "ytdl-core": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch.2", 
    "yt-search": "^2.10.4", 
      "youtube-yts": "^2.0.0", 
      "pino": "^7.0.5", 
      "qrcode-terminal": "^0.12.0", 
-     "util": "^0.12.5" 
+     "util": "^0.12.4" 
    },
   "directories": { 
      "lib": "lib", 
@@ -75,4 +75,4 @@
      "url": "https://github.com/Fortunatusmokaya/DREADED-AI/issues" 
    }, 
    "homepage": "https://github.com/Fortunatusmokaya/DREADED-AI#readme" 
- }
+   }
