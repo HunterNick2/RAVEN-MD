@@ -56,7 +56,7 @@
      "openai": "^4.0.0", 
    "acrcloud": "^1.4.0",
      "ytdl-secktor": "^4.11.7", 
- "ytdl-core": "github:soya-daizu/ytdl-core#sig-patch", 
+ "ytdl-core": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch", 
    "yt-search": "^2.10.4", 
      "youtube-yts": "^2.0.0", 
      "pino": "^7.0.5", 
