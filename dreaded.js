@@ -514,30 +514,20 @@ reply(resultt.stderr)
 
 break;
 
-       case "raven": 
- {
-
-if (!text) return m.reply("This is Raven darkgpt, Type your shit and wait for answer!. This API is borrowed from GURU BOT");
-
-    const msg = encodeURIComponent(text);
-     const data = await fetch(`https://dark.guruapi.tech/egpt?prompt=${msg}`);
-
-    
-    const msgg = await data.json();
-
-    if (!msgg.message) return m.reply('Huh No results found!');
-
-    const final = msgg.message;
-
-await m.reply(final)
-
-} catch (e) {
-
-m.reply('An error occured while communicating with the APIs\n' + e);
-
-}
-
- }
+       case 'raven':
+      {
+        if (!text) return reply(`This is Raven Darkgpt, provide your darkness`);
+          let d = await fetchJson(
+            `https://dark.guruapi.tech/egpt?prompt=${text}`
+          );
+          if (!d.BK9) {
+            return reply(
+              "An error occurred while communicating with APIs. Please try again later."
+            );
+          } else {
+            reply(d.BK9);
+          }
+      }
 break;
 
 case "compile-js":
