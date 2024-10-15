@@ -1965,51 +1965,20 @@ case "movie":
   
  break;
  
-        case "gpt": case "g": 
-          
-
-            if (!text) return reply("Hello am 𝐑𝐀𝐕𝐄𝐍 an Ai developed by 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫, how can I help you today?");
-
-           const configuration = new Configuration({
-
-              apiKey: setting,
-
-            });
-
-            const g = new OpenAIApi(configuration);
-
-            try {
-
-const response = await g.createChatCompletion({
-
-          model: "gpt-3.5-turbo",
-
-          messages: [{role: "user", content: text}],
-
-          });
-
-          m.reply(`${response.data.choices[0].message.content}`);
-
-          } catch (error) {
-
-          if (error.response) {
-
-            console.log(error.response.status);
-
-            console.log(error.response.data);
-
-            console.log(`${error.response.status}\n\n${error.response.data}`);
-
+        case 'gpt':
+      {
+        if (!text) return reply(`Hello Am RAVEN AI developed by Nick.How can i help u?`);
+          let d = await fetchJson(
+            `https://bk9.fun/ai/gptt4?q=${text}`
+          );
+          if (!d.BK9) {
+            return reply(
+              "An error occurred while fetching the AI chatbot response. Please try again later."
+            );
           } else {
-
-            console.log(error);
-
-            m.reply("I\'m Facing An Error:"+ error.message);
-
+            reply(d.BK9);
           }
-
-            }
-
+      }
 break;
 /*
 case "g":
