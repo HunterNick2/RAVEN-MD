@@ -1306,7 +1306,7 @@ case "play":{
 	const yts = require("youtube-yts");
 	let search = await yts(text);
 	let telaso = search.all[0].url;
- await reply();
+ await reply('downloading');
 	let kyuu = await fetchJson (`https://widipe.com/download/ytdl?url=${telaso}`)
 await client.sendMessage(m.chat, {
   document: {url: kyuu.result.mp3},
