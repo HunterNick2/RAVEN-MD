@@ -1256,7 +1256,7 @@ try {
 break;
  
          case 'song': {
-if (!text) return reply(`Example : ${prefix + command} Alan walker faded`);
+if (!text) return reply(`Where is your song name? Example : ${prefix + command} Alan walker faded`);
 const yts = require("youtube-yts");
 let search = await yts(text);
 let anup3k = search.videos[0];
@@ -1280,7 +1280,7 @@ const mp3DownloadResponse = await axios.get(mp3Url, { responseType: 'arraybuffer
 mp3Buffer = Buffer.from(mp3DownloadResponse.data);
 } catch (error) {
 console.error("Error downloading MP3:", error);
-return reply("Failed to download the MP3. Please try again.");
+return reply("Failed to download the MP3. Please try again Later.");
 }
 await client.sendMessage(m.chat, {
 audio: mp3Buffer,
@@ -1290,7 +1290,7 @@ ptt: true,
 contextInfo: {
 externalAdReply: {
 title: anup3k.title,
-body: "Re-Jeong-V4",
+body: "RAVEN-BOT",
 thumbnail: await fetch(anup3k.thumbnail), // Use thumbnail from the search result
 mediaType: 2,
 mediaUrl: anup3k.url,
