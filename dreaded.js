@@ -1255,100 +1255,51 @@ try {
   }
 break;
  
-          case "song": { 
- const getRandom = (ext) => { 
-   return `${Math.floor(Math.random() * 10000)}${ext}`; 
- }; 
-  
- const downloadSong = async (randomName, query) => { 
-   try { 
-     const INFO_URL = "https://slider.kz/vk_auth.php?q="; 
-     const DOWNLOAD_URL = "https://slider.kz/download/"; 
-     let { data } = await axios.get(INFO_URL + query); 
-  
-     if (data["audios"][""].length <= 1) { 
-       console.log("==[ SONG NOT FOUND! ]=="); 
-       return { info: "NF" }; 
-     } 
-  
-     
-     let i = 0; 
-     let track = data["audios"][""][i]; 
-     while (/remix|revisited|mix/i.test(track.tit_art)) { 
-       i += 1; 
-       track = data["audios"][""][i]; 
-     } 
-     //if reach the end then select the first song 
-     if (!track) { 
-       track = data["audios"][""][0]; 
-     } 
-  
-     
-     let link = track.url; 
-     link = encodeURI(link); //to replace unescaped characters from link 
-  
-     let songName = track.tit_art; 
-     songName = 
-       songName = 
-       songName = 
-         songName.replace(/\?|<|>|\*|"|:|\||\/|\\/g, ""); //removing special characters which are not allowed in file name 
-     // console.log(link); 
-     // download(songName, link); 
-     const res = await axios({ 
-       method: "GET", 
-       url: link, 
-       responseType: "stream", 
-     }); 
-     data = res.data; 
-     const path = `./${randomName}`; 
-     const writer = fs.createWriteStream(path); 
-     data.pipe(writer); 
-     return new Promise((resolve, reject) => { 
-       writer.on("finish", () => resolve(songName)); 
-       writer.on("error", () => reject); 
-     }); 
-   } catch (err) { 
-     console.log(err); 
-     return { info: "ERR", err: err.stack }; 
-   } 
- }; 
-  
- //const handler = async (client, msg, msgInfoObj) => { 
-   //let { prefix, reply, args, from } = msgInfoObj; 
-  
-   if (args.length === 0) { 
-     await reply(`Where is the song name?`); 
-     return; 
-   } 
-   let randomName = getRandom(".mp3"); 
-   let query = args.join("%20"); 
-   let response = await downloadSong(randomName, query); 
-   if (response && response.info == "NF") { 
-     await reply( 
-       `Not found!` 
-     ); 
-     return; 
-   } 
-   if (response && response.info === "ERR") { 
-     await reply(response.err); 
-     return; 
-   } 
-   console.log(`song saved-> ./${randomName}`, response); 
-  
-   await client.sendMessage( 
-     from, 
-     { 
-       document: fs.readFileSync(`./${randomName}`), 
-       fileName: response + ".mp3", 
-       mimetype: "audio/mpeg", 
-       mediaUploadTimeoutMs: 1000 * 30, 
-     }, 
-     { quoted: m } 
-   ); 
-   fs.unlinkSync(`./${randomName}`); 
-    } 
-  
-break
+         case 'song': {
+if (!text) return reply(`Example : ${prefix + command} Alan walker faded`);
+const yts = require("youtube-yts");
+let search = await yts(text);
+let anup3k = search.videos[0];
+if (!anup3k) return reply("Song not found,,try another .....!");
+const apiUrl = `https://widipe.com/download/ytdl?url=${encodeURIComponent(anup3k.url)}`;
+let audioResponse;
+try {
+audioResponse = await axios.get(apiUrl);
+} catch (error) {
+console.error("Error fetching audio:", error);
+return reply("Failed to download the audio. Please try again.");
+}
+if (!audioResponse.data.status) {
+return reply("Failed to retrieve audio URL. Please try again.");
+}
+const mp3Url = audioResponse.data.result.mp3;
+// Download the MP3 file
+let mp3Buffer;
+try {
+const mp3DownloadResponse = await axios.get(mp3Url, { responseType: 'arraybuffer' });
+mp3Buffer = Buffer.from(mp3DownloadResponse.data);
+} catch (error) {
+console.error("Error downloading MP3:", error);
+return reply("Failed to download the MP3. Please try again.");
+}
+await client.sendMessage(m.chat, {
+audio: mp3Buffer,
+fileName: anup3k.title + '.mp3',
+mimetype: 'audio/mp4',
+ptt: true,
+contextInfo: {
+externalAdReply: {
+title: anup3k.title,
+body: "Re-Jeong-V4",
+thumbnail: await fetch(anup3k.thumbnail), // Use thumbnail from the search result
+mediaType: 2,
+mediaUrl: anup3k.url,
+}
+},
+}, { quoted: m });
+}
+break;
+ 
   case 'play':
     case 'stream': {
      if (!text) {
