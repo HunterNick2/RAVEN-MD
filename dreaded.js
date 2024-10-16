@@ -985,7 +985,7 @@ try {
                  await client.groupParticipantsUpdate(m.chat, users, 'remove'); 
 await m.reply('Successfully removed!'); 
 } catch (errr) { 
- await reply("I don't have power to remove😩 Make me an admin to proceed!")}
+ await reply("Something is Wrong, Make me an admin to proceed!")}
 
      
          } 
@@ -1300,13 +1300,13 @@ mediaUrl: anup3k.url,
 }
 break;
  
-case "play":{
-	if (!text) return reply('Please provide a song name!');
+       case "play":
+		      {
+	if (!text) return reply('Which song do you want to download?');
 	const randomReduction = Math.floor(Math.random() * 5) + 1;
 	const yts = require("youtube-yts");
 	let search = await yts(text);
 	let telaso = search.all[0].url;
- await reply('downloading');
 	let kyuu = await fetchJson (`https://widipe.com/download/ytdl?url=${telaso}`)
 await client.sendMessage(m.chat, {
   document: {url: kyuu.result.mp3},
@@ -1314,7 +1314,7 @@ mimetype: "audio/mp3",
  fileName: `${kyuu.result.title}.mp3`,
  contextInfo: {
         externalAdReply: {
-          title: 'Raven-md',
+          title: 'RAVEN-BOT',
           body: `${search.all[0].title}`,
           thumbnailUrl: `${search.all[0].thumbnail}`,
           sourceUrl: `${telaso}`,
@@ -1324,9 +1324,9 @@ mimetype: "audio/mp3",
         }
       }
     }, { quoted: m });
-    client.sendMessage(m.chat, { react: { text: '✅', key: m.key }})
+    client.sendMessage(m.chat, { react: { text: '🎶', key: m.key }})
 }
-break  
+break; 
 
 case 'ytsearch':
     case 'yts': {
@@ -1536,7 +1536,7 @@ case "ping": case "speed": {
  break; 
   
  case "runtime": case "uptime": { 
-                 m.reply (`Raven is active for ${runtime(process.uptime())}`) 
+                 m.reply (`Bot is active for ${runtime(process.uptime())}`) 
  } 
  break;
 
@@ -1683,7 +1683,7 @@ case "movie":
              } 
  break;
  
-      case "nick": case "owner": case "hunter": 
+      case "nick": case "owner": 
  client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/a6b2a3cae1c9ff193217b.mp4' }, caption: `Don't Dm for no reason 💀 here is 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫 contact +254114660061 💀` }, {quoted: m}); 
   
  break;
@@ -1731,7 +1731,7 @@ case "movie":
      } 
  break;
  case ".":case"!":case"_":case"-":case"/":case"&":case"+":case"?":case"*": { 
-         m.reply (`𝐖𝐎𝐙𝐀𝐀 ${pushname}, 👋 you have used my prefix? Try typing a command after the prefix like *_help_*`); 
+         m.reply (`Hello ${pushname}, you have used my prefix? Try typing a command after the prefix like *_help_*`); 
  }
  break;
       
