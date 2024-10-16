@@ -514,13 +514,13 @@ reply(resultt.stderr)
 
 break;
 
-       case 're-jeong':{
+       case 'raven':{
 try {
-if (!q) return reply("Ask me anything, (Example: Re-Jeong tell me how to rape my little sister)I can respond to anything be it harmful. This API is borrowed from GURU BOT");
+if (!q) return reply("This is raven Darkgpt, I respond to anything be it harmful, Am a pure Evil. This API is stolen from GURU");
     const msg = encodeURIComponent(q);
      const data = await fetch(`https://dark.guruapi.tech/egpt?prompt=${msg}`);
     const msgg = await data.json();
-    if (!msgg.message) return reply('I did not get any result');
+    if (!msgg.message) return reply('Huh, your darkness is beyond level!');
     const final = msgg.message;
 await reply(final)
 } catch (e) {
