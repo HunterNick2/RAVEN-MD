@@ -514,20 +514,19 @@ reply(resultt.stderr)
 
 break;
 
-       case 'raven':
-      {
-        if (!text) return reply(`This is Raven Darkgpt, provide your darkness`);
-          let d = await fetchJson(
-            `https://dark.guruapi.tech/egpt?prompt=${text}`
-          );
-          if (!d.BK9) {
-            return reply(
-              "An error occurred while communicating with APIs. Please try again later."
-            );
-          } else {
-            reply(d.BK9);
-          }
-      }
+       case 're-jeong':{
+try {
+if (!q) return reply("Ask me anything, (Example: Re-Jeong tell me how to rape my little sister)I can respond to anything be it harmful. This API is borrowed from GURU BOT");
+    const msg = encodeURIComponent(q);
+     const data = await fetch(`https://dark.guruapi.tech/egpt?prompt=${msg}`);
+    const msgg = await data.json();
+    if (!msgg.message) return reply('I did not get any result');
+    const final = msgg.message;
+await reply(final)
+} catch (e) {
+reply('An error occured while communicating with the APIs\n' + e);
+}
+}
 break;
 
 case "compile-js":
