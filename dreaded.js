@@ -239,46 +239,16 @@ if (budy.startsWith('>')) {
 
   // if (!text) return reply("I need more text. For better experience with my inbox AI make longer statements.");
 
-           const configuration = new Configuration({
-
-              apiKey: setting,
-
-            });
-
-            const openai = new OpenAIApi(configuration);
-
-            try {
-
-const response = await openai.createChatCompletion({
-
-          model: "gpt-3.5-turbo",
-
-          messages: [{role: "user", content: text}],
-
-          });
-
-          m.reply(`${response.data.choices[0].message.content}`);
-
-          } catch (error) {
-
-          if (error.response) {
-
-            console.log(error.response.status);
-
-            console.log(error.response.data);
-
-            console.log(`${error.response.status}\n\n${error.response.data}`);
-
+  let d = await fetchJson(
+            `https://bk9.fun/ai/gptt4?q=${text}`
+          );
+          if (!d.BK9) {
+            return reply(
+              "An error occurred while fetching the AI chatbot response. Please try again later."
+            );
           } else {
-
-            console.log(error);
-
-            m.reply("I\'m Facing An Error:"+ error.message);
-
+            reply(d.BK9);
           }
-
-          }
-
     }
 if (badwordkick === 'TRUE' && isBotAdmin && !isAdmin && body && (new RegExp('\\b' + badword.join('\\b|\\b') + '\\b')).test(body.toLowerCase())) {
             
