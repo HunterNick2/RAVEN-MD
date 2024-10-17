@@ -1208,9 +1208,8 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
 
       // Other commands
 
-        case "s": case "sticker": {
-const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
-
+        case "s": case "sticker": 
+		      {
 if(!msgDreaded) { m.reply('Quote an image or a short video.') ; return } ;
 let media;
 if (msgDreaded.imageMessage) {
