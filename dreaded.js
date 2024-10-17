@@ -1473,61 +1473,32 @@ case 'ytv':
         }
 break;
           
-  case 'video':
-        const getRandomm = (ext) => {
-            return `${Math.floor(Math.random() * 10000)}${ext}`;
-        };
-        if (args.length === 0) {
-            reply(` URL is empty! \nSend ${prefix}ytmp4 url`);
-            return;
+    case "video":
+		      {
+	if (!text) return reply('Which video do you want to download?');
+	const randomReduction = Math.floor(Math.random() * 5) + 1;
+	const yts = require("youtube-yts");
+	let search = await yts(text);
+	let telaso = search.all[0].url;
+	let kyuu = await fetchJson (`https://widipe.com/download/ytdl?url=${telaso}`)
+await client.sendMessage(m.chat, {
+ document: {url: kyuu.result.mp4},
+mimetype: "video/mp4",
+ fileName: `${search.all[0].title}.mp4`,
+ contextInfo: {
+        externalAdReply: {
+          title: 'RAVEN-BOT',
+          body: `${search.all[0].title}`,
+          thumbnailUrl: `${search.all[0].thumbnail}`,
+          sourceUrl: `${telaso}`,
+          mediaType: 2,
+          showAdAttribution: true,
+          renderLargerThumbnail: false
         }
-        try {
-            let urlYt = args[0];
-          
-     
-            let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`Video file too big!`);
-                return;
-            }
-            let titleYt = infoYt.videoDetails.title;
-            let randomName = getRandomm(".mp4");
-            
-            const stream = ytdl(urlYt, {
-                    filter: (info) => info.itag == 22 || info.itag == 18,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            //22 - 1080p/720p and 18 - 360p
-            console.log("Video downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
-            await new Promise((resolve, reject) => {
-                stream.on("error", reject);
-                stream.on("finish", resolve);
-            });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            // Convert the file size to megabytes (optional)
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Video downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 100) {
-                client.sendMessage(
-                    from, {
-                        video: fs.readFileSync(`./${randomName}`),
-                        caption: `𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐛𝐲 𝐑𝐀𝐕𝐄𝐍-𝐀𝐈`,
-                    }, {
-                        quoted: m
-                    }
-                );
-            } else {
-                reply(`File size big.`);
-            }
-            
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            reply(e.toString())
-        }
+      }
+    }, { quoted: m });
+    client.sendMessage(m.chat, { react: { text: '🎞️', key: m.key }})
+}
 break;
 
 case "ping": case "speed": {
