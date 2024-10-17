@@ -1183,8 +1183,8 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
       // Other commands
 
           case "sticker": case "s": { 
-            if (/image/.test(mime)) { 
-  
+            if (/image/.test(mime)) {
+		    
                  let media = await client.downloadMediaMessage(qmsg); 
                  let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: packname, author: author }); 
                  await fs.unlinkSync(encmedia); 
@@ -1218,10 +1218,28 @@ let vaa = `𝟏 𝐍𝐢𝐜𝐤➣ 𝐆𝐞𝐭 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧�
 reply(vaa)
 break;
 
-  case "system": 
-  
-              client.sendMessage(m.chat, { image: { url: 'https://telegraph.ph/file/d680a29b1d9b10cef6dfb.jpg' }, caption:`*𝐁𝐎𝐓 𝐍𝐀𝐌𝐄: RAVE𝐍-𝐀𝐈*\n\n*𝐒𝐏𝐄𝐄𝐃: Raven speed: ${dreadedspeed.toFixed(4)} 𝐦𝐬*\n\n*𝐑𝐔𝐍𝐓𝐈𝐌𝐄: ${runtime(process.uptime())}*\n\n*𝐏𝐋𝐀𝐓𝐅𝐎𝐑𝐌: Linux*\n\n*𝐇𝐎𝐒𝐓𝐍𝐀𝐌𝐄: NICK*\n\n*𝐋𝐈𝐁𝐑𝐀𝐑𝐘: Baileys*\n\n\*DEVELOPER: Nick_Hunter`}); 
- break; 
+  case "vv": case "retrieve":{
+
+if (!m.quoted) return m.reply("quote a viewonce message eh")
+
+if (m.quoted.message) {
+            let type = Object.keys(m.quoted.message)[0]
+            let q = m.quoted.message[type]
+            let media = await client.downloadMediaMessage(q)
+            if (/video/.test(type)) {
+
+
+               await client.sendMessage(m.chat, { video: media, caption: `Retrieved by Dreaded! 🦄\nOriginal caption: ${q.caption}`}, { quoted: m})
+
+            } else if (/image/.test(type)) {
+
+await client.sendMessage(m.chat, { image: media, caption: `Retrieved by Dreaded! 🦄\nOriginal caption: ${q.caption}`}, { quoted: m})
+
+            }
+         } else m.reply("That is not a viewonce media. . .")
+
+      } 
+	break;
 
 case "take": {
 try {
