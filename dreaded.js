@@ -542,7 +542,52 @@ const rel = await quote(xf, pushname, pppuser)
  await reply("Tag some text for quotely")}
 
             }
-
+   break;
+		      
+	case 'add':{
+		      try{
+    pattern: "add(?: |$)(.*)",
+    fromMe: true,
+    onlyGroup: true,
+    desc: Lang.ADD_DESC,
+  },
+  async (message, match) => {
+    let participant = await message.groupMetadata(message.jid)
+    let im = await checkImAdmin(participant, message.client.user.jid)
+    if (!im) return await message.sendMessage(Lang.IM_NOT_ADMIN)
+    if (match && !match.includes("+")) {
+      match.split(" ").map(async (user) => {
+        let { participants } = await message.client.groupAdd(message.jid, [
+          user + "@c.us",
+        ])
+        participants.map(async (participant) => {
+          let { invite_code, invite_code_exp, code } =
+            participant[user + "@c.us"]
+          if (code == "403") {
+            await message.client.sendMessage(
+              user + "@s.whatsapp.net",
+              {
+                inviteCode: invite_code,
+                inviteExpiration: invite_code_exp,
+                groupName: await getName(message.jid, message.client),
+                groupJid: message.jid,
+                caption: "Group Invite Message",
+              },
+              MessageType.groupInviteMessage
+            )
+            return await message.sendMessage(Lang.FAILED)
+          }
+          if (code == "200")
+            return await message.sendMessage(Lang.ADDED.format(user), {
+              contextInfo: { mentionedJid: [user + "@s.whatsapp.net"] },
+            })
+          else return await message.sendMessage("*Please Check Given number*")
+        })
+      })
+    } else {
+      return await message.sendMessage(Lang.GIVE_ME_USER)
+    }
+  }
 break;
             case 'upload': case 'url': {
                 
