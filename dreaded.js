@@ -1560,9 +1560,8 @@ case "alive": {
  client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/0b64b4a37ebe0cb19c458.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
-case "apk":
-      case "app":
-        {
+  case "apk":
+      case "app":{
           if (!text) return reply("Where is the app name?");
         let kyuu = await fetchJson (`https://bk9.fun/search/apk?q=${text}`);
         let tylor = await fetchJson (`https://bk9.fun/download/apk?id=${kyuu.BK9[0].id}`);
@@ -1586,6 +1585,17 @@ case "apk":
     }, { quoted: m });
           }
       break;
+
+          case 'mix': { 
+ if (!text) throw `Example : ${prefix + command} 😙+🥲` 
+ let [emoji1, emoji2] = text.split`+` 
+ let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`) 
+ for (let res of anu.results) { 
+     let encmedia = await client.sendImageAsSticker(m.chat, res.url, m, { packname: packname, author: author, categories: res.tags }) 
+     await fs.unlinkSync(encmedia) 
+ } 
+     } 
+ break;
           case "lyrics": 
  try { 
  if (!text) return reply("Provide a song name!"); 
