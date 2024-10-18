@@ -1551,7 +1551,7 @@ case "ping": case "speed": {
  break; 
   
  case "runtime": case "uptime": { 
-                 m.reply (`Bot is active for ${runtime(process.uptime())}`) 
+                 m.reply (`Bot Raven is active for ${runtime(process.uptime())}`) 
  } 
  break;
 
@@ -1560,68 +1560,32 @@ case "alive": {
  client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/0b64b4a37ebe0cb19c458.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
-case 'apk': case "app": {
-if (!text) throw `I need an apk name for download`;
-const getRandomm = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; }; 
-         let randomName = getRandomm(".apk"); 
-         const filePath = `./${randomName}`;     // fs.createWriteStream(`./${randomName}`) 
-let search = require('aptoide-scraper') 
-let download = require('aptoide-scraper') 
-         let searc = await search(text);          //console.log(searc); 
-         let data={}; 
-         if(searc.length){ data = await downloadd
-(searc[0].id); } 
-         else return reply("App not found!"); 
-const apkSize = parseInt(data.size); 
-         if(apkSize > 100) return reply(`File bigger!`); 
-const url = data.dllink; 
-          let  inf  ="*App Name :* " +data.name; 
-          inf +="\n*App id        :* " +data.package; 
-          inf +="\n*Last Update       :* " +data.lastup; 
-          inf +="\n*App Size     :* " +data.size; 
-         // inf +="\n*App Link     :* " +data.dllink; 
-         inf +="\n\n "+ "caption"
-
-
-axios.get(url, { responseType: 'stream' }) 
-   .then(response => { 
-     const writer = fs.createWriteStream(filePath); 
-     response.data.pipe(writer); 
-  
-     return new Promise((resolve, reject) => { 
-       writer.on('finish', resolve); 
-       writer.on('error', reject); 
-     }); 
-   }).then(() => { 
- 
-let buttonMessage = { 
-                         document: fs.readFileSync(filePath), 
-                         mimetype: 'application/vnd.android.package-archive', 
-                         fileName: data.name+`.apk`, 
-                         caption : inf 
-  
-                     } 
-
-client.sendMessage(from, buttonMessage, { quoted: m }) 
-
-    fs.unlink(filePath, (err) => { 
-       if (err) { console.error('Error deleting file:', err); } else { console.log('File deleted successfully'); } }); 
-   }) .catch(error => { 
-         fs.unlink(filePath) 
-     return reply('*_Apk not Found, Sorry_*')//:', error.message); 
-   });
-}
-
-          case 'mix': { 
- if (!text) throw `Example : ${prefix + command} 😙+🥲` 
- let [emoji1, emoji2] = text.split`+` 
- let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`) 
- for (let res of anu.results) { 
-     let encmedia = await client.sendImageAsSticker(m.chat, res.url, m, { packname: packname, author: author, categories: res.tags }) 
-     await fs.unlinkSync(encmedia) 
- } 
-     } 
- break;
+case "apk":
+      case "app":
+        {
+          if (!text) return reply("Where is the app name?");
+        let kyuu = await fetchJson (`https://bk9.fun/search/apk?q=${text}`);
+        let tylor = await fetchJson (`https://bk9.fun/download/apk?id=${kyuu.BK9[0].id}`);
+         await client.sendMessage(
+              m.chat,
+              {
+                document: { url: tylor.BK9.dllink },
+                fileName: tylor.BK9.name,
+                mimetype: "application/vnd.android.package-archive",
+                contextInfo: {
+        externalAdReply: {
+          title: `RAVEN-BOT`,
+          body: `${tylor.BK9.name}`,
+          thumbnailUrl: `${tylor.BK9.icon}`,
+          sourceUrl: `${tylor.BK9.dllink}`,
+          mediaType: 2,
+          showAdAttribution: true,
+          renderLargerThumbnail: false
+        }
+      }
+    }, { quoted: m });
+          }
+      break;
           case "lyrics": 
  try { 
  if (!text) return reply("Provide a song name!"); 
