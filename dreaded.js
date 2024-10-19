@@ -1719,13 +1719,27 @@ case "movie":
          reply(`Broadcasted to ${res.length} Groups.`) 
      } 
  break;
- case ".":case"!":case"_":case"-":case"/":case"&":case"+":case"?":case"*": { 
-         m.reply (`Hello ${pushname}, you have used my prefix? Try typing a command after the prefix like *_help_*`); 
- }
- break;
+ case "gemini": {
+
+    try {
+        if (!text) return m.reply("This is Raven, an AI using Gemini APIs to process text, provide yr query");
+
+       
+        const { default: Gemini } = await import('gemini-ai');
+
+        const gemini = new Gemini("AIzaSyCcZqDMBa8FcAdBxqE1o6YYvzlygmpBx14");
+        const chat = gemini.createChat();
+
+        const res = await chat.ask(text);
+
+        await m.reply(res);
+    } catch (e) {
+        m.reply("I am unable to generate responses\n\n" + e);
+    }
+}
+break;
       
-          
- case "setvar": 
+        case "setvar": 
  if (!Owner) throw NotOwner;  
  if(!text.split('=')[1]) return reply('Incorrect Usage:\nProvide the key and value correctly\nExample: setvar AUTOVIEW_STATUS=TRUE')  
  const herok = new Heroku({  
