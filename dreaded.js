@@ -40,6 +40,7 @@ module.exports = dreaded = async (client, m, chatUpdate, store) => {
         ? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text
         : "";
     var budy = typeof m.text == "string" ? m.text : "";
+	  var msgDreaded = m.message.extendedTextMessage?.contextInfo?.quotedMessage;
    // leave the prefix string empty if you don't want the bot to use a prefix
     const prefix = process.env.PREFIX || '';
 const Heroku = require("heroku-client");  
@@ -1211,18 +1212,19 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
         case "s": case "sticker": 
 {
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
-	
-            if(!qmsg) { m.reply('Quote an image or a short video.') ; return } ;
+
+if(!msgDreaded) { m.reply('Quote an image or a short video.') ; return } ;
 let media;
-if (qmsg.imageMessage) {
-     media = qmsg.imageMessage
-  } else if(qmsg.videoMessage) {
-media = qmsg.videoMessage
+if (msgDreaded.imageMessage) {
+     media = msgDreaded.imageMessage
+  } else if(msgDreaded.videoMessage) {
+media = msgDreaded.videoMessage
   } 
  else {
     m.reply('That is neither an image nor a short video! '); return
-  }; 
-	var result= await client.downloadAndSaveMediaMessage(media);
+  } ;
+
+var result = await client.downloadAndSaveMediaMessage(media);
 
 let stickerResult = new Sticker(result, {
             pack: packname,
@@ -1237,7 +1239,7 @@ const Buffer = await stickerResult.toBuffer();
           client.sendMessage(m.chat, { sticker: Buffer }, { quoted: m });
 
 }
-  break;
+break;
           case "dp": { 
  try { 
  ha = m.quoted.sender; 
