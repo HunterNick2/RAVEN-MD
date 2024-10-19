@@ -1223,7 +1223,7 @@ media = qmsg.videoMessage
     m.reply('That is neither an image nor a short video! '); return
   } ;
 
-var result = await client.downloadAndSaveMediaMessage(media);
+var result = await client.downloadAndSaveMediaMessage(qmsg);
 
 let stickerResult = new Sticker(result, {
             pack: packname,
