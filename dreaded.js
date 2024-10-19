@@ -1221,9 +1221,8 @@ media = qmsg.videoMessage
   } 
  else {
     m.reply('That is neither an image nor a short video! '); return
-  } ;
-
-var result = await client.downloadAndSaveMediaMessage(qmsg);
+  }; 
+	let media = await client.downloadAndSaveMediaMessage(qmsg);
 
 let stickerResult = new Sticker(result, {
             pack: packname,
