@@ -1212,22 +1212,32 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
 {
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 	
-            if (/image/.test(mime)) {
-		 m.reply("A moment");  
-                 let media = await client.downloadMediaMessage(qmsg); 
-                 let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: packname, author: author }); 
-                 await fs.unlinkSync(encmedia); 
-             } else if (/video/.test(mime)) { 
-             m.reply("wait a moment"); 
-                 if (qmsg.seconds > 11) return m.reply('Video is too long for conversion!'); 
-                 let media = await client.downloadMediaMessage(qmsg); 
-                 let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: packname, author: author }); 
-                 await fs.unlinkSync(encmedia); 
-             } else { 
-                 m.reply(`Send an image or short video with the caption ${prefix + command}`); 
-                 } 
-          }
-          break;
+            if(!qmsg) { m.reply('Quote an image or a short video.') ; return } ;
+let media;
+if (qmsg.imageMessage) {
+     media = qmsg.imageMessage
+  } else if(qmsg.videoMessage) {
+media = qmsg.videoMessage
+  } 
+ else {
+    m.reply('That is neither an image nor a short video! '); return
+  }; 
+	var result= await client.downloadAndSaveMediaMessage(media);
+
+let stickerResult = new Sticker(result, {
+            pack: packname,
+            author: author,
+            type: StickerTypes.FULL,
+            categories: ["🤩", "🎉"],
+            id: "12345",
+            quality: 70,
+            background: "transparent",
+          });
+const Buffer = await stickerResult.toBuffer();
+          client.sendMessage(m.chat, { sticker: Buffer }, { quoted: m });
+
+}
+  break;
           case "dp": { 
  try { 
  ha = m.quoted.sender; 
