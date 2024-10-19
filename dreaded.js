@@ -1212,12 +1212,12 @@ function _0x14eb(){const _0x17ec6c=['Audio\x20downloading\x20->','mediaType','st
 {
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 
-if(!msgDreaded) { m.reply('Quote an image or a short video.') ; return } ;
+if(/image/.test(mime)) { m.reply('Quote an image or a short video.') ; return } ;
 let media;
-if (msgDreaded.imageMessage) {
-     media = msgDreaded.imageMessage
-  } else if(msgDreaded.videoMessage) {
-media = msgDreaded.videoMessage
+if (qmsg.imageMessage) {
+     media = qmsg.imageMessage
+  } else if(qmsg.videoMessage) {
+media = qmsg.videoMessage
   } 
  else {
     m.reply('That is neither an image nor a short video! '); return
