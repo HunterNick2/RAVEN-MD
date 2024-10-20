@@ -330,6 +330,9 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬│ 𝗩𝗶𝗱𝗲𝗼
 ┃✬│ 𝗣𝗹𝗮𝘆
 ┃✬│ 𝗦𝗼𝗻𝗴
+┃✬│ 𝗙𝗯𝗱𝗹
+┃✬│ 𝗧𝗶𝗸𝘁𝗼𝗸
+┃✬│ 𝗧𝘄𝗶𝘁𝘁𝗲𝗿
 ┃✬│ 𝗠𝗼𝘃𝗶𝗲
 ┃✬│ 𝗟𝘆𝗿𝗶𝗰𝘀
 ┃✬│ 𝗪𝗵𝗮𝘁𝘀𝗼𝗻𝗴
@@ -342,6 +345,8 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬│ 𝗦𝘁𝗶𝗰𝗸𝗲𝗿
 ┃✬│ 𝗦𝗺𝗲𝗺𝗲
 ┃✬│ 𝗣𝗵𝗼𝘁𝗼
+┃✬│ 𝗥𝗲𝘁𝗿𝗶𝗲𝘃𝗲
+┃✬│ 𝗩𝘃
 ┃✬│ 𝗠𝗶𝘅
 ┃✬│ 𝗧𝗮𝗸𝗲
 ┃✬│ 𝗤𝘂𝗼𝘁𝗲𝗹𝘆
@@ -1100,6 +1105,52 @@ m.reply("An error occured. API might be down\n" + e)
 
 }
 break;
+	  case "facebook": case "fb": case "fbdl": {
+if (!text) return m.reply("Provide a Facebook link for the video");
+
+if (!text.includes('facebook.com')) return m.reply("That is not a Facebook link");
+
+try {
+
+const response = await fetch(`https://api.prabath-md.tech/api/fdown?url=${text}`);
+const data = await response.json();
+
+
+const fbvid = data.data.sd;
+
+await client.sendMessage(m.chat,{video : {url : fbvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
+
+} catch (e) {
+
+m.reply("An error occured. API might be down\n" + e)
+
+}
+
+}
+break;
+      case "tiktok": case "tikdl":  {
+if (!text) return m.reply("Provide a tiktok link for the video");
+
+if (!text.includes('tiktok.com')) return m.reply("That is not a tiktok link.");
+
+try {
+
+const response = await fetch(`https://api.prabath-md.tech/api/tiktokdl?url=${text}`);
+const data = await response.json();
+
+
+const tikvid = data.data.no_wm;
+
+await client.sendMessage(m.chat,{video : {url : tikvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
+
+} catch (e) {
+
+m.reply("An error occured. API might be down" + e)
+
+}
+
+}
+break;  
  case 'sc': case 'script': case 'repo':
 
  client.sendMessage(m.chat, { image: { url: `https://telegra.ph/file/416c3ae0cfe59be8db011.jpg` }, caption: 
