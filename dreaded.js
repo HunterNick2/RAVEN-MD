@@ -1077,6 +1077,29 @@ await m.reply('Successfully removed!');
 
 
 
+  case "twitter": case "twtdl": {
+if (!text) return m.reply("Provide a twitter or X link for the video");
+
+
+
+try {
+
+const response = await fetch(`https://api.prabath-md.tech/api/twitterdl?url=${text}`);
+const data = await response.json();
+
+
+const twtvid = data.data.data.SD;
+
+await client.sendMessage(m.chat,{video : {url : twtvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
+
+} catch (e) {
+
+m.reply("An error occured. API might be down\n" + e)
+
+}
+
+}
+break;
  case 'sc': case 'script': case 'repo':
 
  client.sendMessage(m.chat, { image: { url: `https://telegra.ph/file/416c3ae0cfe59be8db011.jpg` }, caption: 
