@@ -1602,7 +1602,7 @@ case "ping": case "speed": {
 
 case "alive": { 
   
- client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/0b64b4a37ebe0cb19c458.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
   case "apk":
@@ -1753,7 +1753,7 @@ case "movie":
  break;
  
       case "nick": case "owner": 
- client.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/a6b2a3cae1c9ff193217b.mp4' }, caption: `Don't Dm for no reason 💀 here is 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫 contact +254114660061 💀` }, {quoted: m}); 
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/RNCiPJR.mp4' }, caption: `Here is My Owner contact🔥 https://wa.me/message/YNDA2RFTE35LB1` }, {quoted: m}); 
   
  break;
        
