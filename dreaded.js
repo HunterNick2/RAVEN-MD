@@ -41,7 +41,6 @@ module.exports = dreaded = async (client, m, chatUpdate, store) => {
         : "";
     var budy = typeof m.text == "string" ? m.text : "";
 	  var msgDreaded = m.message.extendedTextMessage?.contextInfo?.quotedMessage;
-	  var uploadtoimgur = m.ssage.extendTextMessage?.contextInfo?.quotedMessage;
    // leave the prefix string empty if you don't want the bot to use a prefix
     const prefix = process.env.PREFIX || '';
 const Heroku = require("heroku-client");  
