@@ -321,7 +321,7 @@ let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬│ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
 ┃✬│ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: 𝗩7.𝟎.2
 ┃✬│●───●───●───●─●╮
-┃✬│  ▋▋𝐑𝐀𝐕𝐄𝐍 𝐁𝐎𝐓▋▋
+┃✬│  ▋▋𝐑𝐀𝐕𝐄𝐍 𝐁𝐎𝐓 ▋▋
 ┃✬│●───●───●───●─●╯
 ╰══༄༄༄༄༄༄༄༄༄༄༄༄𖤓╯
 ●═══〘 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 〙═───═●
@@ -1560,31 +1560,33 @@ case 'ytv':
         }
 break;
           
-    case "video":
-		      {
-	if (!text) return reply('Which video do you want to download?');
-	const randomReduction = Math.floor(Math.random() * 5) + 1;
-	const yts = require("youtube-yts");
-	let search = await yts(text);
-	let telaso = search.all[0].url;
-	let kyuu = await fetchJson (`https://widipe.com/download/ytdl?url=${telaso}`)
+    case "video": {
+const yts = require("yt-search");
+try {
+
+if (!text) return m.reply("Which video do u want to download ?")
+
+let search = await yts(text);
+        let link = search.all[0].url;
+
+        let data = await fetchJson (`https://widipe.com/download/ytdl?url=${link}`)
 await client.sendMessage(m.chat, {
- document: {url: kyuu.result.mp4},
+  video: {url: data.result.mp4},
 mimetype: "video/mp4",
- fileName: `${search.all[0].title}.mp4`,
- contextInfo: {
-        externalAdReply: {
-          title: 'RAVEN-BOT',
-          body: `${search.all[0].title}`,
-          thumbnailUrl: `${search.all[0].thumbnail}`,
-          sourceUrl: `${telaso}`,
-          mediaType: 2,
-          showAdAttribution: true,
-          renderLargerThumbnail: false
-        }
-      }
-    }, { quoted: m });
-    client.sendMessage(m.chat, { react: { text: '🎞️', key: m.key }})
+ fileName: `${data.result.title}.mp4`}, { quoted: m });
+
+await client.sendMessage(m.chat, {
+ document: {url: data.result.mp4},
+mimetype: "video/mp4",
+ fileName: `${search.all[0].title}.mp4` }, { quoted: m });
+
+
+} catch (error) {
+
+m.reply("Download failed\n" + error)
+
+}
+
 }
 break;
 
