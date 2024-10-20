@@ -598,7 +598,7 @@ if (isTele) {
 
 let fta2 = await client.downloadAndSaveMediaMessage(q)
 
-    let link = await uploadtoimgur(fta2)
+    let link = await Telegraph(fta2)
 
     const fileSizeMB = (mediaBuffer.length / (1024 * 1024)).toFixed(2)
 
