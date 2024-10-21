@@ -1621,64 +1621,48 @@ mimetype: "audio/mp3",
 break;
   
 case 'ytmp4':
-case 'ytvideo':
-case 'ytv':
-        const getRandommm = (ext) => {
-            return `${Math.floor(Math.random() * 10000)}${ext}`;
-        };
-        if (args.length === 0) {
-            reply(` URL is empty! \nSend ${prefix}ytmp4 url`);
-            return;
-        }
-        try {
-            let urlYt = args[0];
-            if (!urlYt.startsWith("http")) {
-                reply(`Give youtube link!`);
-                return;
-            }
-            let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`Video file too big!`);
-                return;
-            }
-            let titleYt = infoYt.videoDetails.title;
-            let randomName = getRandommm(".mp4");
-            
-            const stream = ytdl(urlYt, {
-                    filter: (info) => info.itag == 22 || info.itag == 18,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            //22 - 1080p/720p and 18 - 360p
-            console.log("Video downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
-            await new Promise((resolve, reject) => {
-                stream.on("error", reject);
-                stream.on("finish", resolve);
-            });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            // Convert the file size to megabytes (optional)
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Video downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 100) {
-                client.sendMessage(
-                    from, {
-                        video: fs.readFileSync(`./${randomName}`),
-                        caption: `${titleYt}`,
-                    }, {
-                        quoted: m
-                    }
-                );
-            } else {
-                reply(`File size big.`);
-            }
-            
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            reply(e.toString())
-        }
+case "ytv": {
+if (!text) return m.reply("Provide a valid YouTube link!")
+
+	let urls = text.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
+	if (!urls) return m.reply('Is this a YouTube link ?');
+	let urlIndex = parseInt(text) - 1;
+	if (urlIndex < 0 || urlIndex >= urls.length)
+		return m.reply('Invalid URL index');
+	await downloadMp4(urls);
+
+
+
+
+
+async function downloadMp4 (link) {
+try {
+
+let data = await fetchJson (`https://widipe.com/download/ytdl?url=${link}`)
+
+await client.sendMessage(m.chat, {
+ audio: {url: data.result.mp4},
+mimetype: "video/mp4",
+ fileName: `${data.result.title}.mp4`
+ 
+    }, { quoted: m });
+
+await client.sendMessage(m.chat, {
+ document: {url: data.result.mp4},
+mimetype: "video/mp4",
+ fileName: `${data.result.title}.mp4`
+ 
+    }, { quoted: m });
+  } catch (error) {
+    console.error('Error fetching the song:', error);
+    await m.reply(`Error.`)
+  }
+}
+
+
+
+
+}
 break;
           
     case "video": {
