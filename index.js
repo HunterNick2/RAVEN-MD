@@ -1,4 +1,4 @@
-const sessionName = "dreaded1";
+const sessionName = "session";
 const antiforeign = process.env.ANTIFOREIGN || 'TRUE';
 const autobio = process.env.AUTOBIO || 'TRUE';
 let botname = process.env.BOTNAME || '𝐑𝐀𝐕𝐄𝐍-𝐀𝐈';
@@ -146,7 +146,7 @@ function smsg(conn, m, store) {
 }
 
 async function startHisoka() {
-  const { state, saveCreds } = await useMultiFileAuthState(`./${sessionName ? sessionName : "dreaded1"}`);
+  const { state, saveCreds } = await useMultiFileAuthState(`./${sessionName ? sessionName : "session"}`);
   const { version, isLatest } = await fetchLatestBaileysVersion();
   console.log(`using WA v${version.join(".")}, isLatest: ${isLatest}`);
   console.log(
