@@ -54,7 +54,7 @@ Linking/Pairing:
 - Fork this repo by tapping  [here](https://github.com/HunterNick2/RAVEN-MD/fork)
 
 
-- Upload the creds.json that you received to the dreaded1 folder.
+- Upload the creds.json that you received to the session folder.
 
 - Connect your fork to any suitable cloud host and deploy.
 
