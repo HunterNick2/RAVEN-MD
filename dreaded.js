@@ -47,7 +47,7 @@ module.exports = dreaded = async (client, m, chatUpdate, store) => {
 const Heroku = require("heroku-client");  
  const appname = process.env.APP_NAME || '';
  const herokuapi = process.env.HEROKU_API;
-const gptdm = process.env.GPT_INBOX || 'TRUE';
+const gptdm = process.env.GPT_INBOX || 'FALSE';
     const cmd = body.startsWith(prefix);
 //const autobio = process.env.AUTOBIO || 'TRUE';
 const botname = process.env.BOTNAME || 'RAVEN AI';
