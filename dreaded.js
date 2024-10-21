@@ -469,11 +469,7 @@ reply(advice());
 console.log(advice());
 
 break;
-	      case "menu": {
-		      client.sendMessage(m.chat, { audio: fs.readFileSync: './menu.mp3'},{ quoted: m });
-					 }
-		      break;
-
+	      
 case "compile-py":
 
 if (!text && !m.quoted) throw 'Quote/tag a python code to compile.';
