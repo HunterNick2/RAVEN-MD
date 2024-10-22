@@ -82,6 +82,7 @@ const antibot = process.env.ANTIBOT || 'FALSE';
     };
     const mime = (quoted.msg || quoted).mimetype || "";
             const qmsg = (quoted.msg || quoted);
+	  const audiovn = "./menu.mp3";
     const author = process.env.STICKER_AUTHOR ||'𝐍𝐢𝐜𝐤';
     const packname = process.env.STICKER_PACKNAME || '𝐇𝐮𝐧𝐭𝐞𝐫';
 const dev = process.env.DEV || '254114660061';
@@ -312,7 +313,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
       switch (command) {
       case "help":
         case "menu":
-				      
+		      await audiovn ()
+		      
 let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
 ┃✬│ 𝐎𝐰𝐧𝐞𝐫 : 𝗡𝗶𝗰𝗸°•°
