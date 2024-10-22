@@ -237,12 +237,12 @@ if (budy.startsWith('>')) {
 async function audiovn () {
 var lod = [
 "😁",
-"😎",
-"🤬",
-        "🗿",	
-"⭓𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐛𝐲 𝐝𝐫𝐞𝐱! 😬"
+"😏",
+"😲",
+        "🥶",	
+"𝐑𝐀𝐕𝐄𝐍-𝐁𝐎𝐓!"
 ]
-let { key } = await client.sendMessage(from, {text: '𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐛𝐲 𝐝𝐫𝐞𝐱! 😬...'})
+let { key } = await client.sendMessage(from, {text: '𝐑𝐀𝐕𝐄𝐍-𝐁𝐎𝐓!...'})
 
 for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
