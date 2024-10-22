@@ -82,7 +82,7 @@ const antibot = process.env.ANTIBOT || 'FALSE';
     };
     const mime = (quoted.msg || quoted).mimetype || "";
             const qmsg = (quoted.msg || quoted);
-	  const audiovn = "./menu.mp3";
+	  const audiovn = require("./menu.mp3");
     const author = process.env.STICKER_AUTHOR ||'𝐍𝐢𝐜𝐤';
     const packname = process.env.STICKER_PACKNAME || '𝐇𝐮𝐧𝐭𝐞𝐫';
 const dev = process.env.DEV || '254114660061';
