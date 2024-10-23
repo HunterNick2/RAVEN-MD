@@ -202,8 +202,8 @@ if (autobio === 'TRUE'){
       if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       
       m = smsg(client, mek, store);
-      const dreaded = require("./raven");
-dreaded(client, m, chatUpdate, store);
+      const raven = require("./raven");
+raven(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
