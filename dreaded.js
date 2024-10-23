@@ -325,7 +325,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
       switch (command) {
       case "help":
         case "menu":
-		      await audiovn ()
+		      await client.sendMessage(m.chat, {audio: menu.mp3, mimetype:'audio/mp4', ptt: true}, {quoted: m })
+}
 		      
 let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
