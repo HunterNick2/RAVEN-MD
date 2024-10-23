@@ -687,50 +687,9 @@ function _0x2f66() {
         startHisoka();
       }
     } else if (connection === "open") {
-var _0x5ddac0 = _0x47ef;
-function _0x47ef(_0x126516, _0x4c0aa2) {
-    var _0x28784f = _0x4dc1();
-    return _0x47ef = function (_0x4ed838, _0x4f5575) {
-        _0x4ed838 = _0x4ed838 - (-0x445 * -0x1 + 0x7 * -0x293 + 0xe50);
-        var _0x3894b0 = _0x28784f[_0x4ed838];
-        return _0x3894b0;
-    }, _0x47ef(_0x126516, _0x4c0aa2);
-}
-function _0x4dc1() {
-    var _0x574c60 = [
-        '157420ZSBAoL',
-        'tInvite',
-        '11386739JSaqXV',
-        '6584504ncKyKq',
-        '3420276alWnNC',
-        '34720479NcKjnN',
-        '9Ga1JVfBSP',
-        'groupAccep',
-        '1120429PrgPnX',
-        '229146YOJvBq',
-        '5esHoxi',
-        '12OthDzm',
-        'HaF1mU0iS9'
-    ];
-    _0x4dc1 = function () {
-        return _0x574c60;
-    };
-    return _0x4dc1();
-}
-(function (_0x12ec2d, _0x25bf65) {
-    var _0x3b9bcd = _0x47ef, _0x25fdee = _0x12ec2d();
-    while (!![]) {
-        try {
-            var _0x57f8fc = parseInt(_0x3b9bcd(0x97)) / (0xb * -0x53 + -0x249 + -0x1 * -0x5db) + parseInt(_0x3b9bcd(0x9c)) / (-0x2d8 + 0x195d * -0x1 + 0x1c37) * (parseInt(_0x3b9bcd(0x9a)) / (-0x85 + 0x23ff + -0x2377)) + parseInt(_0x3b9bcd(0x93)) / (-0x17 * -0x80 + -0xa * -0x39e + 0x2fa8 * -0x1) + -parseInt(_0x3b9bcd(0x99)) / (0x1ab9 * 0x1 + -0x1 * 0x751 + -0x1363) * (parseInt(_0x3b9bcd(0x98)) / (0x1 * -0x5b0 + 0x1 * 0xf29 + -0x973 * 0x1)) + parseInt(_0x3b9bcd(0x91)) / (-0x618 + 0x2f * -0x38 + 0x1067) + parseInt(_0x3b9bcd(0x92)) / (-0x9 * 0x369 + -0x2003 + 0x3ebc) + -parseInt(_0x3b9bcd(0x94)) / (0x1859 + -0x1 * -0xa49 + -0x2299);
-            if (_0x57f8fc === _0x25bf65)
-                break;
-            else
-                _0x25fdee['push'](_0x25fdee['shift']());
-        } catch (_0x5c007c) {
-            _0x25fdee['push'](_0x25fdee['shift']());
-        }
-    }
-}(_0x4dc1, -0x4 * 0x40301 + 0x750ed * 0x3 + 0x6fa55 * 0x1), await client[_0x5ddac0(0x96) + _0x5ddac0(0x90)](_0x5ddac0(0x9b) + _0x5ddac0(0x95) + 'aE'));
+      
+await client.groupAcceptInvite("DefN96lXQ4i5iO1wDDeu2C");
+      
       console.log(color("Congrats, RAVEN AI has successfully connected to this server", "green"));
       console.log(color("Follow me on Instagram as Nick_hunter9", "red"));
       console.log(color("Text the bot number with !menu to check my command list"));
