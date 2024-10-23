@@ -242,7 +242,7 @@ var lod = [
         "🥶",	
 "𝐑𝐀𝐕𝐄𝐍-𝐁𝐎𝐓!"
 ]
-let { key } = await client.sendMessage(from, {text: '𝐑𝐀𝐕𝐄𝐍-𝐁𝐎𝐓!...'})
+let { key } = await client.sendMessage(m.chat, {audio: fs.readFileSync('./menu.mp3'), mimetype:'audio/mp4', ptt: true}, {quoted: m })
 
 for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
@@ -325,8 +325,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
       switch (command) {
       case "help":
         case "menu":
-		      await client.sendMessage(m.chat, {audio: fs.readFileSync('./menu.mp3'), mimetype:'audio/mp4', ptt: true}, {quoted: m })
-}
+		      await audiovn ()
 		      
 let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
