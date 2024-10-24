@@ -509,7 +509,7 @@ break;
 try {
 if (!q) return reply("This is raven Darkgpt, I respond to anything be it harmful, Am a pure Evil. This API is stolen from GURU");
     const msg = encodeURIComponent(q);
-     const data = await fetch(`https://dark.guruapi.tech/egpt?prompt=${msg}`);
+     const data = await fetch(`https://api.dreaded.site/api/gemini-vision?url=https://i.imgur.com/oDQ6LGq.jpeg&instruction=hey+what+is+here=${msg}`);
     const msgg = await data.json();
     if (!msgg.message) return reply('Huh, your darkness is beyond level!');
     const final = msgg.message;
