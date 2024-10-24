@@ -1692,7 +1692,8 @@ if (!text) return m.reply("Which video do u want to download ?")
 let search = await yts(text);
         let link = search.all[0].url;
 
-        let data = await fetchJson (`https://widipe.com/download/ytdl?url=${link}`)
+        
+        let data = await fetchJson (`https://api.dreaded.site/api/ytdl/video?url=${link}`)
 await client.sendMessage(m.chat, {
   video: {url: data.result.mp4},
 mimetype: "video/mp4",
