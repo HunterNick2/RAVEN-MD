@@ -268,7 +268,7 @@ await client.sendMessage(from, {text: lod[i], edit: key });
 if (badwordkick === 'TRUE' && isBotAdmin && !isAdmin && body && (new RegExp('\\b' + badword.join('\\b|\\b') + '\\b')).test(body.toLowerCase())) {
             
      client.groupParticipantsUpdate(from, [sender], 'remove')
-            reply("Au revoir.\n\nBot owner hates usage of bad words!")
+            reply("Hey niggah.\n\nMy owner hates usage of bad words in my presence!")
             
         
                                                    }
@@ -1461,37 +1461,40 @@ await client.sendMessage(m.chat, { image: media, caption: `Retrieved by Raven! �
 
       } 
 	break;
+		      
+    case 'take': {
+const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 
-case "take": {
-try {
-
-  if (!m.quoted) return reply('Quote a sticker!')
-  let fortunx = await client.getName(sender);
-  
-  if (!/webp/.test(mime)) throw `Tag sticker with caption  ${prefix + command}`;
-  if (m.quoted.isAnimated === true) {
-  client.downloadAndSaveMediaMessage(quoted, "gifee");
-  client.sendMessage(m.chat, {sticker:fs.readFileSync("gifee.webp")},{quoted:m});
-  } else if (/image/.test(mime)) {
-  let mediax = await quoted.download();
-  let encmediax = await client.sendImageAsSticker(m.chat, mediax, m, { packname: fortunx, author: fortunx });
-  await fs.unlinkSync(encmediax);
+if(!msgDreaded) { m.reply('Quote an image, a short video or a sticker to change watermark.') ; return } ;
 
 
-
-} else if (/video/.test(mime)) {
-  if ((quoted.msg || quoted).seconds > 11) return m.reply('Not long than 10 seconds!');
-  let mediaxx = await quoted.download();
-  let encmediaxx = await client.sendVideoAsSticker(m.chat, mediaxx, m, { packname: fortunx, author: fortunx });
-  await fs.unlinkSync(encmediaxx)
+let media;
+if (msgDreaded.imageMessage) {
+     media = msgDreaded.imageMessage
+  } else if(msgDreaded.videoMessage) {
+media = msgDreaded.videoMessage
+  } 
+  else if (msgDreaded.stickerMessage) {
+    media = msgDreaded.stickerMessage ;
   } else {
-  reply(`Send a sticker with caption ${prefix + command}`);
-  }
+    m.reply('This is neither a sticker, image nor a video...'); return
+  } ;
 
-} catch (errr) { 
- await reply("Something went wrong! Looks like I am unable to convert animated stickers?")}
+var result = await client.downloadAndSaveMediaMessage(media);
 
-  }
+let stickerResult = new Sticker(result, {
+            pack: pushname,
+            author: pushname,
+            type: StickerTypes.FULL,
+            categories: ["🤩", "🎉"],
+            id: "12345",
+            quality: 70,
+            background: "transparent",
+          });
+const Buffer = await stickerResult.toBuffer();
+          client.sendMessage(m.chat, { sticker: Buffer }, { quoted: m });
+
+}
 break;
  
          case 'song': {
